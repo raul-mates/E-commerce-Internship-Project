@@ -1,0 +1,48 @@
+.footer__container {
+  display: flex;
+  background-color: #223263;
+  color: #fff;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  cursor: default;
+}
+
+.social-links__container {
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.icon-facebook {
+  opacity: 0.8;
+  transition: opacity .2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.icon-instagram {
+  opacity: 0.8;
+  transition: opacity .2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.icon-twitter {
+  opacity: 0.8;
+  transition: opacity .2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.icon-whatsapp {
+  opacity: 0.8;
+  transition: opacity .2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,38 @@
+html {
+  // Font size for 1REM = 10PX
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', sans-serif;
+  font-size: 1.4rem;
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+}
+
+.wrapper__products-details p {
+  margin: 1rem 0;
+}
+
+.link,
+.link:link,
+.link:visited {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  display: none !important;
+}

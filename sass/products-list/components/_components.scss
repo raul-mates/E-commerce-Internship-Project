@@ -1,0 +1,19 @@
+.container__sort {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 10.5rem 0 3rem 0;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 8.9rem;
+  @include respond(phone) {
+    padding-right: 0;
+  }
+}
+
+#sort-by {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}

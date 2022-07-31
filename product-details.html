@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="product-details-styles.css">
+    <title>E-commerce &boxv; The new Amazon</title>
+    <link rel="icon" type="image/x-icon" href="/svg/logo.svg">
+    <script type="module" src="src/product-details/fetch-data.js" defer></script>
+</head>
+<body>
+
+<header class="container__navigation">
+    <nav class="navigation">
+        <div class="navigation__logo">
+            <a href="#" class="link">
+                <img src="/svg/logo.svg" style="width: 30px; height: 30px;" alt="Logo Image" class="logo-img">
+            </a>
+        </div>
+        <div class="navigation__search-bar" style="opacity: 0; visibility: hidden">
+            <input class="search-bar" type="text" placeholder="Search here">
+            <ion-icon name="search-outline" class="search-bar--icon"></ion-icon>
+        </div>
+        <div class="navigation__shopping-cart">
+            <a href="#" class="link cart-link">
+                <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+                <p>(0)</p>
+            </a>
+        </div>
+    </nav>
+</header>
+
+
+<section class="section__product-details">
+    <div class="container__images">
+        <div class="container__side-images">
+            <div class="container__side-images--image-1">
+                <img src="https://dummyjson.com/image/i/products/1/1.jpg" alt="" class="image-1">
+            </div>
+            <div class="container__side-images--image-2">
+                <img src="https://dummyjson.com/image/i/products/1/2.jpg" alt="" class="image-2">
+            </div>
+            <div class="container__side-images--image-3">
+                <img src="https://dummyjson.com/image/i/products/1/3.jpg" alt="" class="image-3">
+            </div>
+            <div class="container__side-images--image-4">
+                <img src="https://dummyjson.com/image/i/products/1/4.jpg" alt="" class="image-4">
+            </div>
+            <div class="container__side-images--image-5">
+                <img src="https://dummyjson.com/image/i/products/1/thumbnail.jpg" alt="" class="image-5">
+            </div>
+        </div>
+        <div class="container__main-image">
+            <img src="https://dummyjson.com/image/i/products/1/4.jpg" alt="" class="main-image">
+        </div>
+    </div>
+
+    <div class="container__details">
+        <h2>Women's Denim Jacket</h2>
+        <p>Brand Name</p>
+        <p>Category: Jacket</p>
+        <p>Sold by: Seller</p>
+        <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea inventore obcaecati repudiandae temporibus? Aliquam dolor eaque est libero, nihil officia officiis quia rerum sint ut! Atque dolore impedit ipsam repudiandae.</p>
+        <p>Stock: 12</p>
+        <p>**RATING HERE**</p>
+        <p>**SAME PRICING SYSTEM AS BEFORE**</p>
+        <button>Add to cart</button>
+    </div>
+</section>
+
+<section class="container__similar-products">
+    <h1>Similar Products</h1>
+</section>
+
+<footer class="footer__container">
+    <p class="link">Terms & Conditions</p>
+    <p class="link">Privacy Policy</p>
+    <div class="social-links__container">
+        <ion-icon name="logo-facebook" class="footer-icon-logo icon-facebook"></ion-icon>
+        <ion-icon name="logo-instagram" class="footer-icon-logo icon-instagram"></ion-icon>
+        <ion-icon name="logo-whatsapp" class="footer-icon-logo icon-whatsapp"></ion-icon>
+        <ion-icon name="logo-twitter" class="footer-icon-logo icon-twitter"></ion-icon>
+    </div>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
