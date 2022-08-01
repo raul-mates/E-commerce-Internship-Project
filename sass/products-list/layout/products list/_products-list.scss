@@ -129,8 +129,8 @@
   cursor: pointer;
   width: 100%;
   padding: 1.5rem 0;
-  background-color: #198754;
-  color: white;
+  background-color: rgb(2, 80, 196);
+  color: #fff;
   border: none;
   font-family: inherit;
   font-size: 1.6rem;
@@ -150,7 +150,7 @@
   }
 
   &:hover {
-    background-color: darken(#198754, 10%);
+    background-color: darken(rgb(2, 80, 196), 10%);
     transform: translateY(50px);
   }
 }

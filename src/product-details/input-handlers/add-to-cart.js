@@ -1,11 +1,10 @@
 export const addToCart = () => {
-    const productsSection = document.querySelector('.section__product-list');
+    const productDetailsSection = document.querySelector('.section__product-details');
     const containerProductsInCart = document.querySelector('.container__products-in-cart');
     const productsInCart = document.querySelector('.products-in-cart');
 
-    productsSection.addEventListener('click', (event) => {
+    productDetailsSection.addEventListener('click', (event) => {
         let currentProductId = event.target.dataset.id;
-        console.log(event.target);
         if (currentProductId) {
             let isInCart = event.target.classList.contains('remove');
             let idArr = localStorage.getItem("productsIdArray");

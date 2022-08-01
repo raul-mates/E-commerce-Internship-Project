@@ -255,8 +255,8 @@ body {
   cursor: pointer;
   width: 100%;
   padding: 1.5rem 0;
-  background-color: #198754;
-  color: white;
+  background-color: rgb(2, 80, 196);
+  color: #fff;
   border: none;
   font-family: inherit;
   font-size: 1.6rem;
@@ -275,7 +275,7 @@ body {
   }
 }
 .btn__add-to-cart:hover {
-  background-color: #115c39;
+  background-color: #013b92;
   transform: translateY(50px);
 }
 

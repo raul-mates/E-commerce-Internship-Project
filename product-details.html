@@ -13,6 +13,7 @@
     <link rel="icon" type="image/x-icon" href="/svg/logo.svg">
     <script type="module" src="src/product-details/fetch-data.js" defer></script>
     <script type="module" src="src/product-details/renderers/render-product-details.js" defer></script>
+    <script type="module" src="src/product-details/input-handlers/select-image-input.js" defer></script>
 </head>
 <body>
 
@@ -28,9 +29,11 @@
             <ion-icon name="search-outline" class="search-bar--icon"></ion-icon>
         </div>
         <div class="navigation__shopping-cart">
-            <a href="#" class="link cart-link">
+            <a href="#" class="link cart-link" >
                 <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
-                <p>(0)</p>
+                <div class="container__products-in-cart hidden">
+                    <p class="products-in-cart">0</p>
+                </div>
             </a>
         </div>
     </nav>
@@ -41,8 +44,9 @@
 
 </section>
 
-<section class="container__similar-products">
+<section class="section__similar-products">
     <h1>Similar Products</h1>
+
 </section>
 
 <footer class="footer__container">
