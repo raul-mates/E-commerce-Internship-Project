@@ -38,9 +38,7 @@ import {addToCart} from "./input-handlers/add-to-cart.js";
                 return
             }
 
-            clonedArr = dataInitialState.filter(product => {
-                return product.title.toLowerCase().includes(inputValue.toLowerCase());
-            });
+            clonedArr = dataInitialState.filter(product => product.title.toLowerCase().includes(inputValue.toLowerCase()));
             renderProducts(clonedArr);
         }, 500));
     } catch (err) {
