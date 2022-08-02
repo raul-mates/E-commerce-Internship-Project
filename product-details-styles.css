@@ -151,6 +151,11 @@ body {
   margin: 0 auto;
   gap: 4rem;
 }
+@media (max-width: 80em) {
+  .section__product-details {
+    grid-template-columns: 1fr;
+  }
+}
 
 .price-container > *:not(:first-child) {
   padding-right: 1rem;
@@ -160,6 +165,24 @@ body {
   display: grid;
   grid-template-columns: 0fr 1fr;
 }
+@media (max-width: 80em) {
+  .container__images {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-star {
+  font-size: 1.8rem;
+  text-align: end;
+  margin-bottom: 2.5px;
+}
 
 .container__side-images {
   display: grid;
@@ -167,8 +190,17 @@ body {
   width: 180px;
   height: 54rem;
 }
+@media (max-width: 80em) {
+  .container__side-images {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+    height: auto;
+  }
+}
 .container__side-images > * {
-  width: 10rem;
+  max-width: 10rem;
   height: 10rem;
 }
 .container__side-images > * > * {
@@ -182,14 +214,15 @@ body {
   display: flex;
   justify-content: center;
   background-color: #333;
-  width: 80rem;
+  max-width: 80rem;
+  margin: 0 auto;
   height: 54rem;
   border-radius: 5px;
   box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 .container__main-image .main-image {
-  width: auto;
+  width: 100%;
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
@@ -226,6 +259,13 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 80em) {
+  .container__similar-products {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+}
 
 .similar-product-image__container {
   height: 20rem;
@@ -245,6 +285,11 @@ body {
   width: 100%;
   text-align: center;
   transform: translateY(-50%);
+}
+@media (max-width: 96em) {
+  .similar-product-image__container::after {
+    content: "TAP FOR DETAILS";
+  }
 }
 
 .similar-product-image {
@@ -279,14 +324,14 @@ body {
   box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.2);
 }
 .side-image:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0 7px 10px 6.5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 
 .selected-img {
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0 7px 10px 6.5px rgba(0, 0, 0, 0.2);
-  z-index: 5;
 }
 
 .footer__container {

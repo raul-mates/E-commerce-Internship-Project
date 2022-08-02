@@ -17,6 +17,12 @@
     }
   }
 
+  @if $breakpoint == small-tab-land {
+    @media (max-width: 80em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == tab-land {
     @media (max-width: 96em) {
       @content;

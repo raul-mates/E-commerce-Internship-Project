@@ -5,7 +5,6 @@ export const addToCart = () => {
 
     productsSection.addEventListener('click', (event) => {
         let currentProductId = event.target.dataset.id;
-        console.log(event.target);
         if (currentProductId) {
             let isInCart = event.target.classList.contains('remove');
             let idArr = localStorage.getItem("productsIdArray");

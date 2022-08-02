@@ -11,13 +11,24 @@ export const renderProductDetails = (product, fullProductsArray) => {
     })
 
 
+    const insertStars = (product) => {
+        const productRating = Math.round(parseFloat(product[0].rating));
+        const ratingStars = document.querySelectorAll('.rating-star');
+        console.log(productRating)
+        ratingStars.forEach((star, i) => {
+            if(i < productRating) {
+                ratingStars[i].name = 'star';
+            }
+        })
+    }
+
     sectionProductDetails.insertAdjacentHTML('beforeend', `
         <div class="container__images">
             <div class="container__side-images">
                 ${getImages.join('')}
             </div>
-            <div class="container__main-image">
-                <img src="${product[0].images[0]}" alt="" class="main-image">
+            <div class="container__main-image" data-id="${product[0].id}">
+                <img src="${product[0].images[0]}" alt="Image of ${product[0].title}" class="main-image">
             </div>
         </div>
     
@@ -43,9 +54,14 @@ export const renderProductDetails = (product, fullProductsArray) => {
                 <p class="default-text">stock:</p>
                 <p class="stock">${Number(product[0].stock) > 1 ? `${product[0].stock} ` + 'pcs.' : `${product[0].stock} ` + 'pc.' }</p>
             </div>
-            <div class="default-text-container">
+            <div class="default-text-container rating-container">
                 <p class="default-text">rating:</p>
-                <p class="rating">${product[0].rating} STARZZZ</p>
+                <ion-icon name="star-outline" class="rating-star"></ion-icon>
+                <ion-icon name="star-outline" class="rating-star"></ion-icon>
+                <ion-icon name="star-outline" class="rating-star"></ion-icon>
+                <ion-icon name="star-outline" class="rating-star"></ion-icon>
+                <ion-icon name="star-outline" class="rating-star"></ion-icon>
+                <p class="rating">${product[0].rating}</p>
             </div>
             <div class="price-container default-text-container">
                 <p class="default-text">price: </p>
@@ -56,14 +72,17 @@ export const renderProductDetails = (product, fullProductsArray) => {
             <button class="atc-button" data-id="${product[0].id}">Add to cart</button>
         </div>
     `)
+    insertStars(product);
 
     let getSimilarProducts = (product, fullProductsArray) => {
+        const productInViewId = document.querySelector('.container__main-image').dataset.id;
         const productCategory = product[0].category;
         const filteredByCategory = fullProductsArray.filter((product) => {
-            if(product.category.includes(productCategory)) {
+            if(product.category.includes(productCategory) && product.id !== parseInt(productInViewId)) {
                 return product;
             }
         });
+        console.log(filteredByCategory)
 
         return filteredByCategory.map((similarProduct, i) => {
             return i < 5 ? `
