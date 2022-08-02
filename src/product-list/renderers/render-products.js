@@ -7,6 +7,8 @@ export const renderProducts = (products) => {
         let discount = product.discountPercentage / 100;
         let productId = String(product.id);
         let isProductInCart = productsCart && productsCart.includes(productId);
+        const fixedProductTitle = product.title.replace(/[^a-z0-9A-Z]/gi, ' ').trim().replace(product.title[0], product.title[0].toUpperCase());
+        product.title = fixedProductTitle;
 
         productsContainer.insertAdjacentHTML('beforeend', `
         <div class="container__product-details" data-price="${product.price - (product.price * discount)}">

@@ -60,6 +60,15 @@
   & > * {
     max-width: 10rem;
     height: 10rem;
+    @include respond(small-tab-land) {
+      max-width: 7.5rem;
+      height: 7.5rem;
+    }
+
+    @include respond(phone) {
+      max-width: 6.5rem;
+      height: 6.5rem;
+    }
   }
 
   & > * > * {
@@ -80,6 +89,9 @@
   border-radius: 5px;
   box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  @include respond(phone) {
+    height: 37rem;
+  }
 
 
   .main-image {
@@ -172,6 +184,7 @@
   width: 30rem;
   box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.2);
   transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+
 
   &:hover {
     transform: scale(1.05);
