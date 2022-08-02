@@ -1,6 +1,7 @@
 export const renderProductDetails = (product, fullProductsArray) => {
     const sectionProductDetails = document.querySelector('.section__product-details');
     const sectionSimilarProducts = document.querySelector('.section__similar-products');
+    const fixedProductTitle = product[0].title.replace(/[^a-z0-9A-Z]/gi, ' ').trim().replace(product[0].title[0], product[0].title[0].toUpperCase());
 
     let getImages = product[0].images.map((image, i) => {
         return `
@@ -27,12 +28,12 @@ export const renderProductDetails = (product, fullProductsArray) => {
                 ${getImages.join('')}
             </div>
             <div class="container__main-image" data-id="${product[0].id}">
-                <img src="${product[0].images[0]}" alt="Image of ${product[0].title}" class="main-image">
+                <img src="${product[0].images[0]}" alt="Image of ${fixedProductTitle}" class="main-image">
             </div>
         </div>
     
         <div class="container__details">
-            <h2>${product[0].title}</h2>
+            <h2>${fixedProductTitle}</h2>
             <div class="default-text-container">
                 <p class="default-text">brand:</p>
                 <p class="brand">${product[0].brand}</p>

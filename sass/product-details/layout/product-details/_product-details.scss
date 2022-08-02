@@ -52,6 +52,10 @@
     height: auto;
   }
 
+  @include respond(phone) {
+    gap: 1rem;
+  }
+
 
   & > * {
     max-width: 10rem;
@@ -76,6 +80,7 @@
   border-radius: 5px;
   box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+
 
   .main-image {
     width: 100%;

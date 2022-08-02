@@ -199,6 +199,11 @@ body {
     height: auto;
   }
 }
+@media (max-width: 39em) {
+  .container__side-images {
+    gap: 1rem;
+  }
+}
 .container__side-images > * {
   max-width: 10rem;
   height: 10rem;
