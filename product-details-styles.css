@@ -143,6 +143,33 @@ body {
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
+@media (max-width: 71em) {
+  .home-logo {
+    display: none;
+  }
+}
+
+.back-arrow-link {
+  display: none;
+}
+@media (max-width: 71em) {
+  .back-arrow-link {
+    display: block;
+  }
+}
+
+.back-arrow {
+  display: none;
+}
+@media (max-width: 71em) {
+  .back-arrow {
+    font-size: 3.8rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
 .section__product-details {
   display: grid;
   grid-template-columns: 1fr 1fr;

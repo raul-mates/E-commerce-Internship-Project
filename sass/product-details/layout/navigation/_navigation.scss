@@ -87,3 +87,26 @@
 .products-in-cart {
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
+
+.home-logo {
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.back-arrow-link {
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+  }
+}
+
+.back-arrow {
+  display: none;
+  @include respond(tab-port) {
+    font-size: 3.8rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
