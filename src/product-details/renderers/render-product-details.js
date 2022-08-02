@@ -14,7 +14,6 @@ export const renderProductDetails = (product, fullProductsArray) => {
     const insertStars = (product) => {
         const productRating = Math.round(parseFloat(product[0].rating));
         const ratingStars = document.querySelectorAll('.rating-star');
-        console.log(productRating)
         ratingStars.forEach((star, i) => {
             if(i < productRating) {
                 ratingStars[i].name = 'star';
@@ -82,7 +81,6 @@ export const renderProductDetails = (product, fullProductsArray) => {
                 return product;
             }
         });
-        console.log(filteredByCategory)
 
         return filteredByCategory.map((similarProduct, i) => {
             return i < 5 ? `
@@ -124,6 +122,11 @@ export const renderProductDetails = (product, fullProductsArray) => {
     const checkIfProductIsInCart = () => {
         const productsIdArr = JSON.parse(localStorage.getItem('productsIdArray'));
         const addToCartButton = document.querySelector('.atc-button');
+
+        if (productsIdArr === null) {
+            localStorage.setItem('productsIdArray', JSON.stringify([]))
+            return
+        }
 
         if(productsIdArr.includes(String(product[0].id))) {
             addToCartButton.innerHTML = 'Remove from cart';
