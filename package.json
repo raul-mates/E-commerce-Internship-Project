@@ -3,7 +3,7 @@
     "start": "live-server",
     "compile:sass": "sass --watch sass/products-list/main.scss styles.css",
     "compile:sass2": "sass --watch sass/product-details/main.scss product-details-styles.css",
-    "compile:typescript": "tsc -w"
+    "compile:sass3": "sass --watch sass/checkout-page/main.scss checkout-page.css",
   },
   "dependencies": {
     "sass": "^1.54.0"

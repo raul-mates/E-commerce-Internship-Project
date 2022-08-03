@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="checkout-page.css">
+    <script type="module" src="/src/checkout-page/fetch-data.js" defer></script>
+    <script type="module" src="/src/checkout-page/input-handlers/remove-from-cart.js" defer></script>
     <title>E-commerce &boxv; The new Amazon</title>
     <link rel="icon" type="image/x-icon" href="/svg/logo.svg">
 </head>
@@ -12,8 +19,11 @@
 <header class="container__navigation">
     <nav class="navigation">
         <div class="navigation__logo">
-            <a href="/index.html" class="link">
+            <a href="/index.html" class="link home-logo">
                 <img src="/svg/logo.svg" style="width: 30px; height: 30px;" alt="Logo Image" class="logo-img">
+            </a>
+            <a href="/index.html" class="link back-arrow" style="width: 30px; height: 30px;">
+                <ion-icon name="arrow-back-outline" class="back-arrow"></ion-icon>
             </a>
         </div>
         <div class="navigation__search-bar" style="opacity: 0; visibility: hidden">
@@ -21,7 +31,7 @@
             <ion-icon name="search-outline" class="search-bar--icon"></ion-icon>
         </div>
         <div class="navigation__shopping-cart">
-            <a href="#" class="link cart-link" >
+            <a href="/checkout-page.html" class="link cart-link">
                 <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
                 <div class="container__products-in-cart hidden">
                     <p class="products-in-cart">0</p>
@@ -31,5 +41,34 @@
     </nav>
 </header>
 
+<section class="section__check-form">
+    <div class="checkout-container">
+        <div class="main-content-wrapper">
+            <div class="total-price__wrapper">
+                <div class="container__total">
+                    <p>Total:</p>
+                    <p class="total-price"></p>
+                </div>
+                <div class="container__to-payment">
+                    <button class="payment-button">Go to payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer__container">
+    <p class="link">Terms & Conditions</p>
+    <p class="link">Privacy Policy</p>
+    <div class="social-links__container">
+        <ion-icon name="logo-facebook" class="footer-icon-logo icon-facebook"></ion-icon>
+        <ion-icon name="logo-instagram" class="footer-icon-logo icon-instagram"></ion-icon>
+        <ion-icon name="logo-whatsapp" class="footer-icon-logo icon-whatsapp"></ion-icon>
+        <ion-icon name="logo-twitter" class="footer-icon-logo icon-twitter"></ion-icon>
+    </div>
+</footer>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>
