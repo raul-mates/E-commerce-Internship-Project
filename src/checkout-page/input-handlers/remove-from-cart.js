@@ -1,3 +1,5 @@
+import {localStorageGet, localStorageSetJson} from "../../utils/localstorage-util.js";
+
 export const removeFromCart = () => {
     const containerCheckout = document.querySelector('.checkout-container');
     const containerProductsInCart = document.querySelector('.container__products-in-cart');
@@ -5,28 +7,28 @@ export const removeFromCart = () => {
 
     containerCheckout.addEventListener('click', (event) => {
         let currentProductId = event.target.dataset.id;
-        console.log(event.target)
-        console.log(currentProductId);
         if (currentProductId) {
-            let idArr = localStorage.getItem("productsIdArray");
+            let idArr = localStorageGet('productsIdArray');
 
-            idArr === null ? idArr = [] : idArr = JSON.parse(idArr);
+            idArr = idArr ?? [];
 
             if(idArr.includes(currentProductId)) {
-                const parsedCart = JSON.parse(localStorage.getItem('productsIdArray'));
+                const parsedCart = localStorageGet('productsIdArray');
                 parsedCart.splice(parsedCart.indexOf(currentProductId), 1)
-                localStorage.setItem('productsIdArray', JSON.stringify(parsedCart));
+                localStorageSetJson('productsIdArray', parsedCart);
             }
 
-            productsInCart.innerHTML = JSON.parse(localStorage.getItem("productsIdArray")).length;
+            productsInCart.innerHTML = localStorageGet('productsIdArray').length;
 
-            if(JSON.parse(localStorage.getItem('productsIdArray')).length === 0) {
+            if(localStorageGet('productsIdArray').length === 0) {
                 containerProductsInCart.classList.add('hidden')
             }
         }
     })
-    if (JSON.parse(localStorage.getItem('productsIdArray')) && JSON.parse(localStorage.getItem('productsIdArray')).length > 0) {
+    if (localStorageGet('productsIdArray') && localStorageGet('productsIdArray').length > 0) {
         containerProductsInCart.classList.remove('hidden');
-        productsInCart.innerHTML = JSON.parse(localStorage.getItem("productsIdArray")).length;
+        productsInCart.innerHTML = localStorageGet('productsIdArray').length;
     }
 }
+
+

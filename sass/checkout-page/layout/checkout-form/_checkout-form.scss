@@ -75,6 +75,9 @@
 .total-price__wrapper {
   max-width: 90%;
   margin: 0 auto;
+  position: sticky;
+  bottom: 0;
+  background: #fff;
 }
 
 .container__total {
