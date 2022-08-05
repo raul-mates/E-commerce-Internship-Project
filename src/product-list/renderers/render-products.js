@@ -24,8 +24,8 @@ export const renderProducts = (products) => {
                     </div>                
                        <div class="container__product-price">
                            <span class="product-default-text">price:</span>
-                           <p class="container__product-price--after-discount"><strong>${(product.price - (product.price * discount)).toFixed(2)} &dollar;</strong></p>
-                           <p class="container__product-price--before-discount">${product.price.toLocaleString('en-US')} &dollar;</p>
+                           <p class="container__product-price--after-discount"><strong>${(product.price - (product.price * discount)).toLocaleString('en-US', {maximumFractionDigits: 2})} &dollar;</strong></p>
+                           <p class="container__product-price--before-discount">${product.price.toLocaleString('en-US', {maximumFractionDigits: 2})} &dollar;</p>
                            <p class="container__product-price--discount">(${product.discountPercentage}% off)</p>
                        </div>                
                     <p><span class="product-default-text">seller:</span> ${product.seller}</p>

@@ -65,8 +65,8 @@ export const renderProductDetails = (product, fullProductsArray) => {
             </div>
             <div class="price-container default-text-container">
                 <p class="default-text">price: </p>
-                <p class="price-after-discount">${(product[0].price - (product[0].price * (product[0].discountPercentage / 100))).toFixed(2)}&dollar;</p>
-                <p class="price-before-discount" style="text-decoration: line-through; opacity: 0.7;">${product[0].price}&dollar;</p>
+                <p class="price-after-discount">${(product[0].price - (product[0].price * (product[0].discountPercentage / 100))).toLocaleString('en-US', {maximumFractionDigits: 2})}&dollar;</p>
+                <p class="price-before-discount" style="text-decoration: line-through; opacity: 0.7;">${product[0].price.toLocaleString('en-US', {maximumFractionDigits: 2})}&dollar;</p>
                 <p class="discount-percentage" style="color: #0A8200;">(${product[0].discountPercentage}% off)</p>
             </div>
             <button class="atc-button" data-id="${product[0].id}">Add to cart</button>
@@ -102,8 +102,8 @@ export const renderProductDetails = (product, fullProductsArray) => {
                             </div>
                             <div class="price-container default-text-container">
                                 <p class="default-text">price: </p>
-                                <p class="price-after-discount">${(product[0].price - (product[0].price * (product[0].discountPercentage / 100))).toFixed(2)}&dollar;</p>
-                                <p class="price-before-discount" style="text-decoration: line-through; opacity: 0.7;">${product[0].price}&dollar;</p>
+                                <p class="price-after-discount">${(product[0].price - (product[0].price * (product[0].discountPercentage / 100))).toLocaleString('en-US', {maximumFractionDigits: 2})}&dollar;</p>
+                                <p class="price-before-discount" style="text-decoration: line-through; opacity: 0.7;">${product[0].price.toLocaleString('en-US', {maximumFractionDigits: 2})}&dollar;</p>
                                 <p class="discount-percentage" style="color: #0A8200;">(${product[0].discountPercentage}% off)</p>
                             </div>
                         </div>

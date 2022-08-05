@@ -30,7 +30,7 @@ const checkSingleInputQuantity = (qtyInput, totalPriceElement) => {
         const totalPrice = +totalPriceElement.dataset.totalPrice;
         const newTotal = ((totalPrice + (basePrice * qty)) - oldPrice);
 
-        totalPriceElement.innerText = `${newTotal.toFixed(2)}$`;
+        totalPriceElement.innerText = `${newTotal.toLocaleString('en-US', {maximumFractionDigits: 2})}$`;
         totalPriceElement.dataset.totalPrice = newTotal;
         previousQty = qty;
     });

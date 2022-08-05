@@ -14,6 +14,7 @@ export const renderCart = (productsArr) => {
         productsArr.forEach(product => {
             const fixedProductTitle = product.title.replace(/[^a-z0-9A-Z]/gi, ' ').trim().replace(product.title[0], product.title[0].toUpperCase());
             const priceAfterDiscount = (product.price - (product.price * (product.discountPercentage / 100)));
+            console.log(priceAfterDiscount.toLocaleString('en-US', {maximumFractionDigits: 2}))
             checkoutContainer.insertAdjacentHTML('afterbegin', `
         <div class="container__in-cart-product" data-id="${product.id}">
             <div class="container__product-image">
@@ -24,8 +25,8 @@ export const renderCart = (productsArr) => {
                     <h3 class="product-title">${fixedProductTitle}</h3>
                     <div class="price-container default-text-container">
                         <p class="default-text">price: </p>
-                        <p class="price-after-discount" style="display: inline-block; margin-right: 1rem;">${priceAfterDiscount.toFixed(2)}&dollar;</p>
-                        <p class="price-before-discount" style="display: inline-block; margin-right: 1rem; text-decoration: line-through; opacity: 0.7;">${product.price}&dollar;</p>
+                        <p class="price-after-discount" style="display: inline-block; margin-right: 1rem;">${priceAfterDiscount.toLocaleString('en-US', {maximumFractionDigits: 2})}&dollar;</p>
+                        <p class="price-before-discount" style="display: inline-block; margin-right: 1rem; text-decoration: line-through; opacity: 0.7;">${product.price.toLocaleString('en-US', {maximumFractionDigits: 2})}&dollar;</p>
                         <p class="discount-percentage" style="display: inline-block; margin-right: 1rem; color: #0A8200;">(${product.discountPercentage}% off)</p>
                     </div>
                 </div>
@@ -33,7 +34,7 @@ export const renderCart = (productsArr) => {
                     <a href="/checkout-page.html" class="link">
                         <ion-icon name="trash-outline" class="remove-from-cart-icon" data-id="${product.id}"></ion-icon>
                     </a>
-                    <input type="number" min="1" max="${product.stock}" data-base-price="${priceAfterDiscount.toFixed(2)}" value="1" class="quantity">
+                    <input type="number" min="1" max="${product.stock}" data-base-price="${priceAfterDiscount}" value="1" class="quantity">
                 </div>
             </div>
             </div>
@@ -47,7 +48,7 @@ export const renderCart = (productsArr) => {
             if (products.length > 0) {
                 const productPricesArray = products.map(productPrice => (productPrice.price - (productPrice.price * (productPrice.discountPercentage / 100))));
                 const total = productPricesArray.reduce((acc, val) => acc + val, 0)
-                totalPriceElement.innerHTML = `${total.toFixed(2)}$`;
+                totalPriceElement.innerHTML = `${total.toLocaleString('en-US', {maximumFractionDigits: 2})}$`;
                 totalPriceElement.dataset.totalPrice = total;
             }
         }
