@@ -28,7 +28,7 @@ const checkSingleInputQuantity = (qtyInput, totalPriceElement) => {
         const basePrice = +input.dataset.basePrice;
         const oldPrice = basePrice * previousQty;
         const totalPrice = +totalPriceElement.dataset.totalPrice;
-        const newTotal = (totalPrice + (basePrice * qty)) - oldPrice;
+        const newTotal = ((totalPrice + (basePrice * qty)) - oldPrice);
 
         totalPriceElement.innerText = `${newTotal.toFixed(2)}$`;
         totalPriceElement.dataset.totalPrice = newTotal;

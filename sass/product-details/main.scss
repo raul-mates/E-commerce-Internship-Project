@@ -1,9 +1,8 @@
-@import 'abstracts/mixins';
-@import 'abstracts/variables';
+@import '../globals/abstracts/_mixins.scss';
 
-@import 'base/base';
+@import '../globals/base/_base.scss';
 
-@import 'layout/navigation/navigation';
+@import '../globals/navigation/_navigation.scss';
 @import 'layout/product-details/product-details';
-@import 'layout/footer/footer';
+@import '../globals/footer/_footer.scss';
 

@@ -1,10 +1,10 @@
-@import 'abstracts/mixins';
+@import '../globals/abstracts/mixins';
 
-@import 'abstracts/variables';
-@import 'base/base';
+@import '../globals/abstracts/variables';
+@import '../globals/base/base';
 
-@import 'layout/navigation/navigation';
+@import '../globals/navigation/navigation';
 @import 'layout/products list/products-list';
-@import 'layout/footer/footer';
+@import '../globals/footer/footer';
 
 @import 'components/components';

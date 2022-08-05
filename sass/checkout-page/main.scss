@@ -1,7 +1,8 @@
-@import 'abstracts/mixins';
+@import '../globals/abstracts/mixins';
 
-@import 'base/base';
+@import '../globals/base/_base.scss';
 
-@import 'layout/navigation/navigation';
+@import '../globals/navigation/_navigation.scss';
 @import 'layout/checkout-form/checkout-form';
 @import 'layout/footer/footer';
+@import '../globals/footer/_footer.scss';

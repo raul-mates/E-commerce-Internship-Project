@@ -12,7 +12,7 @@ export const renderProducts = (products) => {
 
         productsContainer.insertAdjacentHTML('beforeend', `
         <div class="container__product-details" data-price="${product.price - (product.price * discount)}">
-            <a href="/product-details.html" class="product__details--link" data-id="${productId}">
+            <a href="./product-details.html" class="product__details--link" data-id="${productId}">
                 <div class="container__image">
                     <img src="${product.thumbnail}" alt="Photo of ${product.title}" class="container__product-details--image">
                 </div>

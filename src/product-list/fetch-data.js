@@ -23,7 +23,7 @@ import {addToCart} from "./input-handlers/add-to-cart.js";
         sortButton.value = defaultSorting;
         sortButton.addEventListener('change', (event) => {
             defaultSorting = event.target.value;
-            sortByCondition(clonedArr, event.target.value)
+            sortByCondition(clonedArr, event.target.value);
             renderProducts(clonedArr);
         })
 
@@ -35,7 +35,7 @@ import {addToCart} from "./input-handlers/add-to-cart.js";
                 sortByCondition(dataInitialState, defaultSorting);
                 clonedArr = dataInitialState;
                 renderProducts(clonedArr);
-                return
+                return;
             }
 
             clonedArr = dataInitialState.filter(product => product.title.toLowerCase().includes(inputValue.toLowerCase()));
