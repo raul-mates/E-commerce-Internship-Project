@@ -40,29 +40,6 @@ import {addToCart} from "./input-handlers/add-to-cart.js";
                 renderProducts(clonedArr);
             }
         }, 500))
-
-        //SORTING LOGIC
-        // sortButton.value = defaultSorting;
-        // sortButton.addEventListener('change', (event) => {
-        //     defaultSorting = event.target.value;
-        //     sortByCondition(clonedArr, event.target.value);
-        //     renderProducts(clonedArr);
-        // })
-
-        //SEARCH LOGIC
-        // searchInput.addEventListener('input', debounce((event) => {
-        //     let inputValue = event.target.value;
-        //
-        //     if(inputValue === '') {
-        //         sortByCondition(dataInitialState, defaultSorting);
-        //         clonedArr = dataInitialState;
-        //         renderProducts(clonedArr);
-        //         return;
-        //     }
-        //
-        //     clonedArr = dataInitialState.filter(product => product.title.toLowerCase().includes(inputValue.toLowerCase()));
-        //     renderProducts(clonedArr);
-        // }, 500));
     } catch (err) {
         console.warn(err);
     }
