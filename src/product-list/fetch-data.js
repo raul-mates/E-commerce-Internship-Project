@@ -10,37 +10,59 @@ import {addToCart} from "./input-handlers/add-to-cart.js";
         const data = await request.json();
         const dataInitialState = data.products;
         let clonedArr;
-        let defaultSorting = 'Ascending';
+        let currentSortingState = 'Ascending';
         const sortButton = document.querySelector('#sort-by');
         const searchInput = document.querySelector('.search-bar');
 
-        sortByCondition(dataInitialState, defaultSorting);
+        sortByCondition(dataInitialState, currentSortingState);
         clonedArr = [...dataInitialState];
 
         renderProducts(dataInitialState);
 
-        //SORTING LOGIC
-        sortButton.value = defaultSorting;
-        sortButton.addEventListener('change', (event) => {
-            defaultSorting = event.target.value;
-            sortByCondition(clonedArr, event.target.value);
+        currentSortingState = sortButton.value;
+        sortButton.addEventListener('change', (e) => {
+            currentSortingState = e.target.value;
+            sortByCondition(dataInitialState, currentSortingState);
+            sortByCondition(clonedArr, currentSortingState);
             renderProducts(clonedArr);
         })
 
-        //SEARCH LOGIC
-        searchInput.addEventListener('input', debounce((event) => {
-            let inputValue = event.target.value;
+        searchInput.addEventListener('input', debounce((e) => {
+            let userInputValue = e.target.value;
+            console.log(userInputValue)
 
-            if(inputValue === '') {
-                sortByCondition(dataInitialState, defaultSorting);
+            clonedArr = dataInitialState.filter(product => product.title.toLowerCase().includes(userInputValue.toLowerCase()))
+            renderProducts(clonedArr);
+
+            if(userInputValue === '') {
+                sortByCondition(dataInitialState, currentSortingState);
                 clonedArr = dataInitialState;
                 renderProducts(clonedArr);
-                return;
             }
+        }, 500))
 
-            clonedArr = dataInitialState.filter(product => product.title.toLowerCase().includes(inputValue.toLowerCase()));
-            renderProducts(clonedArr);
-        }, 500));
+        //SORTING LOGIC
+        // sortButton.value = defaultSorting;
+        // sortButton.addEventListener('change', (event) => {
+        //     defaultSorting = event.target.value;
+        //     sortByCondition(clonedArr, event.target.value);
+        //     renderProducts(clonedArr);
+        // })
+
+        //SEARCH LOGIC
+        // searchInput.addEventListener('input', debounce((event) => {
+        //     let inputValue = event.target.value;
+        //
+        //     if(inputValue === '') {
+        //         sortByCondition(dataInitialState, defaultSorting);
+        //         clonedArr = dataInitialState;
+        //         renderProducts(clonedArr);
+        //         return;
+        //     }
+        //
+        //     clonedArr = dataInitialState.filter(product => product.title.toLowerCase().includes(inputValue.toLowerCase()));
+        //     renderProducts(clonedArr);
+        // }, 500));
     } catch (err) {
         console.warn(err);
     }
