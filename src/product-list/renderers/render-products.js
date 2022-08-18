@@ -16,8 +16,8 @@ export const renderProducts = (products) => {
                 <div class="container__image">
                     <img src="${product.thumbnail}" alt="Photo of ${product.title}" class="container__product-details--image">
                 </div>
-                <div class="wrapper__products-details">
-                    <h3 class="container__product-details--title" data-title="${product.title.toLowerCase()}">${(product.title.length > 25) ? product.title.substr(0, 24) + '&hellip;' : product.title}</h3>
+                <div class="wrapper__products-details" style="text-overflow: ellipsis;">
+                    <h3 class="container__product-details--title" data-title="${product.title.toLowerCase()}" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${product.title}</h3>
                     <p><span class="product-default-text">category:</span> ${product.category.replace(product.category[0], product.category[0].toUpperCase())}</p>
                     <div class="container__product-info">
                         <p class="product__brand-type"><span class="product-default-text">brand:</span> ${product.brand}</p>

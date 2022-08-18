@@ -91,7 +91,7 @@ export const renderProductDetails = (product, fullProductsArray) => {
                             <img class="similar-product-image" src="${similarProduct.thumbnail}" alt="${similarProduct.title}">
                         </div>
                         <div class="similar-product-info__container">
-                            <h3 class="similar-product-title">${(similarProduct.title.length > 20) ? similarProduct.title.substr(0, 20) + '&hellip;' : similarProduct.title}</h3>
+                            <h3 class="similar-product-title" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${similarProduct.title}</h3>
                             <div class="default-text-container">
                                 <p class="default-text">brand:</p>
                                 <p>${similarProduct.brand}</p>
