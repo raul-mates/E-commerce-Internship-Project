@@ -183,6 +183,7 @@ body {
   transform: translate(-50%, -50%);
   overflow-y: scroll;
   cursor: default;
+  box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 71em) {
   .checkout-container {
