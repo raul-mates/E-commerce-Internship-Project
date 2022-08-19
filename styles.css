@@ -174,7 +174,7 @@ body {
   max-width: 95%;
   margin: 0 auto;
   display: grid;
-  min-height: 72vh;
+  height: 100vh;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 6rem;
   justify-items: center;
@@ -331,6 +331,7 @@ body {
 
 .footer__container {
   display: flex;
+  flex-grow: 1;
   background-color: #223263;
   color: #fff;
   justify-content: space-around;

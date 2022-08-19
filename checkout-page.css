@@ -304,6 +304,7 @@ body {
 
 .footer__container {
   display: flex;
+  flex-grow: 1;
   background-color: #223263;
   color: #fff;
   justify-content: space-around;
